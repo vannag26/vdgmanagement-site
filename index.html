@@ -264,7 +264,18 @@
 <!-- 8. CREDIBILITY (real facts only) -->
 <section class="section" id="about" style="padding-top:0" aria-labelledby="about-h">
   <div class="wrap cred-grid">
-    <div class="rounded"><picture><source srcset="img/florida-gulf-coast.webp" type="image/webp"><img src="img/florida-gulf-coast.jpg" width="597" height="800" loading="lazy" decoding="async" alt="Florida Gulf Coast waterfront skyline at sunset"></picture></div>
+    <div class="rounded about-media">
+      <video id="about-video" autoplay muted loop playsinline preload="metadata" poster="media/founder-mission-poster.jpg" width="1080" height="1350" aria-label="V&amp;DG Management mission video. On-screen text: About V&amp;DG. Founder-led. Florida-based. Built for accountable AI. Accountable AI for healthcare and enterprise. Every AI workflow has a named human owner. Guardrails and an off switch from day one. Assess. Pilot. Operate. Hands-on, accountable, governed. Service only. No patient data handled. Request an Executive AI Strategy Session. vdgmanagement.com.">
+        <source src="media/founder-mission.webm" type="video/webm">
+        <source src="media/founder-mission.mp4" type="video/mp4">
+        <img src="img/florida-gulf-coast.jpg" width="597" height="800" alt="Florida Gulf Coast waterfront skyline at sunset">
+      </video>
+      <picture class="about-still"><source srcset="media/founder-mission-poster.webp" type="image/webp"><img src="media/founder-mission-poster.jpg" width="1080" height="1350" loading="lazy" decoding="async" alt="Founder-led. Florida-based. Built for accountable AI."></picture>
+      <button type="button" class="about-video-toggle" aria-controls="about-video" aria-pressed="false">Pause<span class="sr-only"> mission video</span></button>
+    </div>
+    <script>(function(){var v=document.getElementById('about-video'),b=v&&v.parentNode.querySelector('.about-video-toggle');if(!v)return;
+      if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.preload='none';v.pause();return;}
+      b.addEventListener('click',function(){if(v.paused){v.play();b.firstChild.nodeValue='Pause';b.setAttribute('aria-pressed','false');}else{v.pause();b.firstChild.nodeValue='Play';b.setAttribute('aria-pressed','true');}});})();</script>
     <div>
       <p class="kicker">About V&amp;DG</p>
       <h2 id="about-h">Founder-led. Florida-based. Built for accountable AI.</h2>

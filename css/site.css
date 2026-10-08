@@ -168,6 +168,13 @@ ul{margin:0;padding:0}
 .creds li{background:#fff;border:1px solid var(--line);border-radius:var(--r-sm);padding:16px 18px;font-weight:600;line-height:1.35}
 .creds span{display:block;font-weight:400;color:var(--muted);font-size:.9rem;margin-top:4px}
 .founder-line{font-size:1.05rem;color:var(--muted)}
+/* About: founder mission video (poster/still shown instead when reduced motion is requested) */
+.about-media{position:relative;background:var(--green)}
+.about-media video,.about-media .about-still img{width:100%;height:100%;object-fit:cover}
+.about-media .about-still{display:none;height:100%}
+.about-video-toggle{position:absolute;right:14px;bottom:14px;font:600 .8rem/1 var(--sans);color:var(--cream);background:rgba(18,38,32,.72);border:1px solid rgba(255,254,249,.35);border-radius:999px;padding:8px 14px;cursor:pointer}
+.about-video-toggle:hover{background:rgba(18,38,32,.9)}
+@media (prefers-reduced-motion:reduce){.about-media video,.about-video-toggle{display:none}.about-media .about-still{display:block}}
 @media (max-width:860px){.cred-grid{grid-template-columns:1fr}.cred-grid .rounded{aspect-ratio:16/10}}
 @media (max-width:520px){.creds{grid-template-columns:1fr}}
 
