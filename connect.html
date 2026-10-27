@@ -38,8 +38,25 @@ body.connect{background:#122620;color:#FFFEF9;min-height:100vh;display:flex;alig
     <a href="https://vdgmanagement.com">Visit vdgmanagement.com</a>
     <a href="https://linkedin.com/in/vanna-g-ai-healthcare-strategy" rel="noopener">Connect on LinkedIn</a>
     <a href="mailto:hello@vdgmanagement.com">hello@vdgmanagement.com</a>
+    <a href="#" id="share" hidden>Share my card</a>
   </div>
   <p class="foot">V&amp;DG Management LLC</p>
 </main>
+<script>
+(function(){
+  var b=document.getElementById('share');
+  if(!b) return;
+  var url='https://vdgmanagement.com/connect.html';
+  b.hidden=false;
+  b.addEventListener('click',function(e){
+    e.preventDefault();
+    if(navigator.share){
+      navigator.share({title:'Vanna Gonzalez, V&DG Management',text:'My digital business card',url:url}).catch(function(){});
+    } else if(navigator.clipboard){
+      navigator.clipboard.writeText(url).then(function(){b.textContent='Link copied';});
+    } else { window.prompt('Copy this link',url); }
+  });
+})();
+</script>
 </body>
 </html>
