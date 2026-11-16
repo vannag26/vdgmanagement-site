@@ -37,7 +37,7 @@ body.connect{background:#122620;color:#FFFEF9;min-height:100vh;display:flex;alig
   <div class="actions">
     <a class="primary" href="vanna.vcf" download="Vanna-Gonzalez.vcf">Save my contact</a>
     <a href="https://vdgmanagement.com">Visit vdgmanagement.com</a>
-    <a href="https://linkedin.com/in/vanna-g-ai-healthcare-strategy" rel="noopener">Connect on LinkedIn</a>
+    <a href="https://www.linkedin.com/in/vanna-g-ai-healthcare-strategy" id="li" rel="noopener">Connect on LinkedIn</a>
     <a href="mailto:hello@vdgmanagement.com">hello@vdgmanagement.com</a>
     <a href="#" id="share" hidden>Share my card</a>
   </div>
@@ -58,6 +58,22 @@ body.connect{background:#122620;color:#FFFEF9;min-height:100vh;display:flex;alig
     } else if(navigator.clipboard){
       navigator.clipboard.writeText(url).then(function(){b.textContent='Link copied';});
     } else { window.prompt('Copy this link',url); }
+  });
+})();
+</script>
+<script>
+(function(){
+  var a=document.getElementById('li'); if(!a) return;
+  var id='vanna-g-ai-healthcare-strategy', web='https://www.linkedin.com/in/'+id, ua=navigator.userAgent||'';
+  a.addEventListener('click',function(e){
+    var app=null;
+    if(/android/i.test(ua)) app='intent://www.linkedin.com/in/'+id+'#Intent;scheme=https;package=com.linkedin.android;S.browser_fallback_url='+encodeURIComponent(web)+';end';
+    else if(/iphone|ipad|ipod/i.test(ua)) app='linkedin://in/'+id;
+    if(!app) return;
+    e.preventDefault();
+    var t=setTimeout(function(){ if(!document.hidden) window.location.href=web; },1500);
+    document.addEventListener('visibilitychange',function(){ if(document.hidden) clearTimeout(t); });
+    window.location.href=app;
   });
 })();
 </script>
